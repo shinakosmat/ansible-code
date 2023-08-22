@@ -1,0 +1,348 @@
+2023-06-20 07:53:35,979 p=2670 u=ec2-user n=ansible | 54.147.135.22 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 54.147.135.22 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-20 07:53:35,985 p=2670 u=ec2-user n=ansible | 44.204.17.9 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 44.204.17.9 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-20 07:56:08,073 p=2699 u=ec2-user n=ansible | 52.91.203.253 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-20 07:56:08,115 p=2699 u=ec2-user n=ansible | 100.24.31.150 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-20 08:27:26,954 p=3205 u=ec2-user n=ansible | 100.24.31.150 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-20 08:27:27,098 p=3205 u=ec2-user n=ansible | 52.91.203.253 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-20 08:45:01,735 p=731 u=ec2-user n=ansible | PLAY [devserver] ***************************************************************
+2023-06-20 08:45:01,845 p=731 u=ec2-user n=ansible | TASK [Gathering Facts] *********************************************************
+2023-06-20 08:45:05,063 p=731 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:45:05,090 p=731 u=ec2-user n=ansible | TASK [Creating user] ***********************************************************
+2023-06-20 08:45:05,676 p=731 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:45:05,689 p=731 u=ec2-user n=ansible | TASK [create file] *************************************************************
+2023-06-20 08:45:06,160 p=731 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:45:06,173 p=731 u=ec2-user n=ansible | TASK [read the output] *********************************************************
+2023-06-20 08:45:06,312 p=731 u=ec2-user n=ansible | ok: [52.91.203.253] => {
+    "output": {
+        "changed": true,
+        "dest": "/tmp/ansible.txt",
+        "diff": {
+            "after": {
+                "atime": 1687250706.11371,
+                "mode": "0600",
+                "mtime": 1687250706.11371,
+                "path": "/tmp/ansible.txt",
+                "state": "touch"
+            },
+            "before": {
+                "atime": 1687250706.108152,
+                "mode": "0644",
+                "mtime": 1687250706.108152,
+                "path": "/tmp/ansible.txt",
+                "state": "absent"
+            }
+        },
+        "failed": false,
+        "gid": 0,
+        "group": "root",
+        "mode": "0600",
+        "owner": "root",
+        "size": 0,
+        "state": "file",
+        "uid": 0
+    }
+}
+2023-06-20 08:45:06,326 p=731 u=ec2-user n=ansible | TASK [create directory] ********************************************************
+2023-06-20 08:45:06,808 p=731 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:45:06,820 p=731 u=ec2-user n=ansible | TASK [install apache] **********************************************************
+2023-06-20 08:45:15,304 p=731 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:45:15,319 p=731 u=ec2-user n=ansible | TASK [install finger] **********************************************************
+2023-06-20 08:45:22,939 p=731 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:45:22,983 p=731 u=ec2-user n=ansible | PLAY RECAP *********************************************************************
+2023-06-20 08:45:22,983 p=731 u=ec2-user n=ansible | 52.91.203.253              : ok=7    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-06-20 08:59:31,011 p=1056 u=ec2-user n=ansible | PLAY [devserver] **********************************************************************************************
+2023-06-20 08:59:31,027 p=1056 u=ec2-user n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2023-06-20 08:59:33,522 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:59:33,546 p=1056 u=ec2-user n=ansible | TASK [Creating user] ******************************************************************************************
+2023-06-20 08:59:34,139 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:59:34,171 p=1056 u=ec2-user n=ansible | TASK [create file] ********************************************************************************************
+2023-06-20 08:59:34,758 p=1056 u=ec2-user n=ansible | changed: [52.91.203.253]
+2023-06-20 08:59:34,770 p=1056 u=ec2-user n=ansible | TASK [read the output] ****************************************************************************************
+2023-06-20 08:59:34,796 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253] => {
+    "msg": "Hello from ansible this is running on RedHat"
+}
+2023-06-20 08:59:34,807 p=1056 u=ec2-user n=ansible | TASK [create directory] ***************************************************************************************
+2023-06-20 08:59:35,081 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:59:35,093 p=1056 u=ec2-user n=ansible | TASK [install apache] *****************************************************************************************
+2023-06-20 08:59:36,165 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:59:36,179 p=1056 u=ec2-user n=ansible | TASK [install finger] *****************************************************************************************
+2023-06-20 08:59:37,110 p=1056 u=ec2-user n=ansible | ok: [52.91.203.253]
+2023-06-20 08:59:37,138 p=1056 u=ec2-user n=ansible | PLAY RECAP ****************************************************************************************************
+2023-06-20 08:59:37,139 p=1056 u=ec2-user n=ansible | 52.91.203.253              : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-06-22 07:11:30,355 p=3233 u=ec2-user n=ansible | 100.24.31.150 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 100.24.31.150 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-22 07:11:30,363 p=3233 u=ec2-user n=ansible | 52.91.203.253 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 52.91.203.253 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-22 07:44:07,431 p=3670 u=ec2-user n=ansible | 44.206.253.210 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-22 07:44:07,484 p=3670 u=ec2-user n=ansible | 3.89.238.185 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-23 06:57:00,161 p=3206 u=ec2-user n=ansible | 44.206.253.210 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 44.206.253.210 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-23 06:57:00,164 p=3206 u=ec2-user n=ansible | 3.89.238.185 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 3.89.238.185 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-06-23 06:59:15,547 p=3454 u=ec2-user n=ansible | 3.86.203.175 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-06-23 06:59:15,765 p=3454 u=ec2-user n=ansible | 35.173.126.212 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-18 09:51:50,330 p=2629 u=ec2-user n=ansible | 35.173.126.212 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 35.173.126.212 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-18 09:51:50,336 p=2629 u=ec2-user n=ansible | 3.86.203.175 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 3.86.203.175 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-19 15:04:03,478 p=3353 u=ec2-user n=ansible | 3.86.203.175 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 3.86.203.175 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-19 15:04:03,489 p=3353 u=ec2-user n=ansible | 35.173.126.212 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 35.173.126.212 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-19 15:45:30,135 p=3927 u=ec2-user n=ansible | 44.202.144.113 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-19 15:45:30,188 p=3927 u=ec2-user n=ansible | 3.83.104.137 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-19 15:45:58,295 p=3990 u=ec2-user n=ansible | 44.202.144.113 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-19 15:45:58,301 p=3990 u=ec2-user n=ansible | 3.83.104.137 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-19 17:04:01,267 p=5721 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:04:01,291 p=5721 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:04:04,752 p=5721 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:04:04,776 p=5721 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:04:07,158 p=5721 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:04:07,182 p=5721 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:04:07,305 p=5721 u=ec2-user n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2023-08-19 17:04:07,306 p=5721 u=ec2-user n=ansible | fatal: [3.83.104.137]: FAILED! => {"changed": false, "msg": "Could not find or access 'file/index.html'\nSearched in:\n\t/home/ec2-user/roles/apache/files/file/index.html\n\t/home/ec2-user/roles/apache/file/index.html\n\t/home/ec2-user/roles/apache/tasks/files/file/index.html\n\t/home/ec2-user/roles/apache/tasks/file/index.html\n\t/home/ec2-user/files/file/index.html\n\t/home/ec2-user/file/index.html on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-08-19 17:04:07,307 p=5721 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:04:07,307 p=5721 u=ec2-user n=ansible | 3.83.104.137               : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:06:12,579 p=5811 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:06:12,596 p=5811 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:06:14,660 p=5811 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:06:14,687 p=5811 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:06:16,394 p=5811 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:06:16,406 p=5811 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:06:16,851 p=5811 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:06:16,897 p=5811 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:06:16,897 p=5811 u=ec2-user n=ansible | 3.83.104.137               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:07:58,061 p=5947 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:07:58,076 p=5947 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:08:00,395 p=5947 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:08:00,417 p=5947 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:08:13,274 p=5947 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:08:13,291 p=5947 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:08:14,886 p=5947 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:08:14,920 p=5947 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:08:14,920 p=5947 u=ec2-user n=ansible | 3.83.104.137               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:14:09,939 p=6156 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:14:09,955 p=6156 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:14:12,065 p=6156 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:14:12,098 p=6156 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:14:13,449 p=6156 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:14:13,463 p=6156 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:14:15,259 p=6156 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:14:15,294 p=6156 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:14:15,295 p=6156 u=ec2-user n=ansible | 3.83.104.137               : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:15:22,436 p=6263 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:15:22,451 p=6263 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:15:24,572 p=6263 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:15:24,607 p=6263 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:15:25,911 p=6263 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:15:25,924 p=6263 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:15:27,246 p=6263 u=ec2-user n=ansible | fatal: [3.83.104.137]: FAILED! => {"changed": false, "checksum": "f40d17cb5c145fa243b53e07a69a7d032030ae5b", "msg": "Unsupported parameters for (ansible.legacy.copy) module: remote_scr. Supported parameters include: src, directory_mode, force (thirsty), unsafe_writes, remote_src, dest, checksum, seuser, setype, group, content, _original_basename, serole, mode, selevel, owner, follow, validate, backup, attributes (attr), local_follow."}
+2023-08-19 17:15:27,249 p=6263 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:15:27,249 p=6263 u=ec2-user n=ansible | 3.83.104.137               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:17:03,911 p=6367 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:17:03,955 p=6367 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:17:06,434 p=6367 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:17:06,459 p=6367 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:17:07,737 p=6367 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:17:07,758 p=6367 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:17:09,264 p=6367 u=ec2-user n=ansible | fatal: [3.83.104.137]: FAILED! => {"changed": false, "checksum": "d31610e1ec7e850f3c77496f6a73fac9e5da7482", "msg": "Unsupported parameters for (ansible.legacy.copy) module: remote_scr. Supported parameters include: src, directory_mode, force (thirsty), unsafe_writes, remote_src, dest, checksum, seuser, setype, group, content, _original_basename, serole, mode, selevel, owner, follow, validate, backup, attributes (attr), local_follow."}
+2023-08-19 17:17:09,266 p=6367 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:17:09,266 p=6367 u=ec2-user n=ansible | 3.83.104.137               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:18:54,814 p=6466 u=ec2-user n=ansible | PLAY [qaserver] ******************************************************************************************************************************************************************
+2023-08-19 17:18:54,841 p=6466 u=ec2-user n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************
+2023-08-19 17:18:56,906 p=6466 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:18:56,929 p=6466 u=ec2-user n=ansible | TASK [apache : Install Apache] ***************************************************************************************************************************************************
+2023-08-19 17:18:58,059 p=6466 u=ec2-user n=ansible | ok: [3.83.104.137]
+2023-08-19 17:18:58,074 p=6466 u=ec2-user n=ansible | TASK [apache : copy index file] **************************************************************************************************************************************************
+2023-08-19 17:18:59,317 p=6466 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:18:59,340 p=6466 u=ec2-user n=ansible | RUNNING HANDLER [apache : restart apache] ****************************************************************************************************************************************
+2023-08-19 17:19:00,423 p=6466 u=ec2-user n=ansible | changed: [3.83.104.137]
+2023-08-19 17:19:00,437 p=6466 u=ec2-user n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************
+2023-08-19 17:19:00,437 p=6466 u=ec2-user n=ansible | 3.83.104.137               : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-08-19 17:42:13,612 p=6773 u=ec2-user n=ansible | Starting galaxy role install process
+2023-08-19 17:42:13,613 p=6773 u=ec2-user n=ansible | - downloading role 'java', owned by geerlingguy
+2023-08-19 17:42:13,811 p=6773 u=ec2-user n=ansible | - downloading role from https://github.com/geerlingguy/ansible-role-java/archive/2.3.1.tar.gz
+2023-08-19 17:42:13,966 p=6773 u=ec2-user n=ansible | - extracting geerlingguy.java to /home/ec2-user/roles/geerlingguy.java
+2023-08-19 17:42:13,971 p=6773 u=ec2-user n=ansible | - geerlingguy.java (2.3.1) was installed successfully
+2023-08-20 14:39:17,381 p=3468 u=ec2-user n=ansible | 3.83.104.137 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 3.83.104.137 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-20 14:39:17,386 p=3468 u=ec2-user n=ansible | 44.202.144.113 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 44.202.144.113 port 22: Connection timed out",
+    "unreachable": true
+}
+2023-08-20 14:43:27,384 p=3575 u=ec2-user n=ansible | 52.87.226.78 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-20 14:43:27,444 p=3575 u=ec2-user n=ansible | 184.73.149.39 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-20 22:19:56,060 p=3536 u=ec2-user n=ansible | Starting galaxy role install process
+2023-08-20 22:19:56,062 p=3536 u=ec2-user n=ansible | - downloading role 'java', owned by geerlingguy
+2023-08-20 22:19:56,266 p=3536 u=ec2-user n=ansible | - downloading role from https://github.com/geerlingguy/ansible-role-java/archive/2.3.1.tar.gz
+2023-08-20 22:19:56,535 p=3536 u=ec2-user n=ansible | - extracting geerlingguy.java to /home/ec2-user/roles/geerlingguy.java
+2023-08-20 22:19:56,544 p=3536 u=ec2-user n=ansible | - geerlingguy.java (2.3.1) was installed successfully
+2023-08-20 22:23:19,804 p=3830 u=ec2-user n=ansible | 54.161.136.145 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-20 22:24:39,642 p=3886 u=ec2-user n=ansible | 54.161.136.145 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-20 22:24:40,121 p=3886 u=ec2-user n=ansible | 3.84.49.203 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-21 06:16:10,013 p=3280 u=ec2-user n=ansible | 54.89.105.244 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-21 06:16:10,217 p=3280 u=ec2-user n=ansible | 3.95.230.87 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-22 06:25:04,246 p=3354 u=ec2-user n=ansible | 54.237.170.205 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2023-08-22 06:25:04,287 p=3354 u=ec2-user n=ansible | 18.204.211.102 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
