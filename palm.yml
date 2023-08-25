@@ -11,18 +11,26 @@
         name: "{{ username }}"
         comment: Serge Admin
         shell: /bin/bash
-
-        #when: ansible_os_family == "Debian"
+            #when: ansible_os_family == "Debian"
     - name: create file
       file:
         path: /tmp/ansible.txt
         state: touch
         mode: '0600'
+      register: output
+    - name: read the output
+      debug:
+       msg: "Hello from ansible this is running on {{ ansible_os_family }}"
     - name: create directory
       file:
         path: /tmt/dir
         state: directory
         mode: '0777'
+      tags:
+        - app1
+        - c1
+    - name: create a file
+      command: touch /tmp/file1
     - name: install apache
       yum:
         name: "{{ pkg_name }}"
